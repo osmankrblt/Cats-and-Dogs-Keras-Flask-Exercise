@@ -1,4 +1,3 @@
 keras
 numpy
-os
 opencv-python
