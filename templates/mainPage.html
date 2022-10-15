@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Cat or Dog</title>
+
+    <style>
+      body {
+        background-color: powderblue;
+      }
+      .button {
+        color: blue;
+        margin: 20px;
+        border: 2px solid green;
+        padding: 20px;
+        font-size: 16px;
+        height: auto;
+        width: auto;
+      }
+      .button:hover {
+        background-color: #008cba;
+        color: white;
+      }
+      .image {
+        width: 100%;
+    height: 100%;
+    object-fit: contain;
+    overflow"
+      }
+
+      .a {
+        background-color: white;
+        width: 300px;
+        height: 300px;
+        border: 2px solid green;
+    
+        margin: 20px;
+      }
+      .container {
+        background-color: powderblue;
+        width: 80%;
+        height: 80%;
+        margin: auto;
+        padding: 20px;
+      }
+      .rows {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+
+          <div class="container">
+      <div class="row rows">
+        {% if result %}
+
+        <h2>Class: {{result}}</h2>
+
+        {% else %}
+        <h2>Selected Image</h2>
+
+        {% endif %}
+
+        <div class="div a">
+          {% if selectedImage %}
+          <img  class="image" src="{{ selectedImage }}" alt="User Image" >
+          {% endif %}
+          
+        </div>
+      </div>
+
+      <div class="rows">
+      <form method=post enctype=multipart/form-data action="/">
+      <input type=file name=file>
+      <button type="submit" class="button">Run</button>
+    </form>
+        
+
+        <!-- Jquery Cdn -->
+        <script
+          src="https://code.jquery.com/jquery-3.5.1.js"
+          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+          crossorigin="anonymous"
+        ></script>
+
+        <!-- <script type="text/javascript">
+          $(document).on("submit", "#images", function (e) {
+            e.preventDefault();
+            $.ajax({
+              type: "POST",
+              url: "/",
+              data: {
+                image: $("#image").val(),
+              },
+              success: function () {
+                var imgArea = document.getElementById("selectedImage");
+                var imgPath = document.getElementById("image");
+
+                var showImagePath = document.getElementById("imagePathArea");
+                imgArea.src = imgPath.value;
+
+                showImagePath.innerHTML = imgPath.value;
+              },
+            });
+          });
+        </script> -->
+      </div>
+    </div>
+  </body>
+</html>
