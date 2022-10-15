@@ -4,7 +4,7 @@ import os
 from keras.models import load_model
 from keras.applications.vgg16 import preprocess_input
 import numpy as np
-
+port = int(os.environ.get("PORT", 5000))
 ALLOWED_EXTENSIONS = { 'png', 'jpg', 'jpeg'}
 UPLOADED_FILE_NAME = "uploadedImage.png"
 STATIC_FOLDER='static'
@@ -86,4 +86,4 @@ def home():
     
         
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0',port=port)
