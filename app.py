@@ -1,10 +1,9 @@
-
 from flask import Flask,render_template,request,flash
-from predict import predictImage
 import cv2
 import os
 from keras.models import load_model
-
+from keras.applications.vgg16 import preprocess_input
+import numpy as np
 
 ALLOWED_EXTENSIONS = { 'png', 'jpg', 'jpeg'}
 UPLOADED_FILE_NAME = "uploadedImage.png"
@@ -21,6 +20,21 @@ if os.listdir(app.config['STATIC_FOLDER'])!= []:
 
 model = load_model("model/myModel.h5")
 
+
+
+
+def predictImage(image, model):
+    image = preprocess_input(image)
+    image = np.expand_dims(image, axis=0)
+
+    result = np.squeeze(model.predict(np.array(image)))
+
+    index = np.argmax(result)
+
+    if result[index] < 0.6:
+        return "None Type"
+
+    return "Cat" if index == 0 else "Dog"
 
 def allowed_file(filename):
     print(filename)
