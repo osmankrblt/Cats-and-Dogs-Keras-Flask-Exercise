@@ -79,7 +79,7 @@ def home():
     if request.method == 'POST' and upload():
        
         selectedImage,result = predict()
-        print(selectedImage)
+   
         return render_template("mainPage.html",result=result,selectedImage=selectedImage) 
     
     return render_template("mainPage.html") 
