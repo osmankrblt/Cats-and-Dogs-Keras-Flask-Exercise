@@ -3,4 +3,6 @@ dataset
 __pycache__
 model/model.h5
 .idea
+.github
+Procfile
 
