@@ -1,8 +1,8 @@
 from flask import Flask,render_template,request,flash
 import cv2
 import os
-from keras.models import load_model
-from keras.applications.vgg16 import preprocess_input
+from tensorflow.keras.models import load_model
+from tensorflow.keras.applications.vgg16 import preprocess_input
 import numpy as np
 
 ALLOWED_EXTENSIONS = { 'png', 'jpg', 'jpeg'}
