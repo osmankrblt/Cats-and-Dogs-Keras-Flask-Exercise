@@ -18,7 +18,7 @@ if os.listdir(app.config['STATIC_FOLDER'])!= []:
      os.remove(os.path.join(STATIC_FOLDER,UPLOADED_FILE_NAME))
     
 
-model = load_model("model/myModel.h5")
+model = load_model("model/model.h5")
 
 
 

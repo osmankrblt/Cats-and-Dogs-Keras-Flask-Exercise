@@ -1,7 +1,7 @@
 data
 dataset
 __pycache__
-model/model.h5
+model
 .idea
 .github
 Procfile
